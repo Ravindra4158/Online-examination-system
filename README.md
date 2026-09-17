@@ -56,7 +56,7 @@ OnlineExamSystem/
 │   ├── css/style.css
 │   ├── js/timer.js
 │   └── WEB-INF/web.xml
-└── lib/                → MySQL JDBC connector jar
+└── lib/                → Compile-time libraries (Tomcat Servlet API and MySQL JDBC connector)
 ```
 
 Full structure and reasoning in [`architecture.md`](./architecture.md).
@@ -85,15 +85,16 @@ This script will automatically:
 ### Manual Setup (Fallback)
 
 1. **Prerequisites:** JDK 11+, Apache Tomcat 10, MySQL 8.0
-   Set `CATALINA_HOME` to the Tomcat installation that will run the application. The compile classpath must use that same installation's `lib\servlet-api.jar`; do not download or copy a separate Servlet API jar.
+   Set `CATALINA_HOME` to the Tomcat installation that will run the application. The project includes `lib\servlet-api.jar`, copied from Tomcat's `lib` directory for compilation. Keep it matched to the runtime Tomcat; do not download a different Servlet API jar.
 2. Create the database and run the schema:
    ```sql
    CREATE DATABASE exam_system;
    -- then run schema.sql
    ```
 3. Update DB credentials in `src/com/examsystem/util/DBConnection.java`
-4. Compile, package as WAR, and deploy to Tomcat's `webapps/` directory
-5. Start Tomcat and open:
+4. Compile using `lib\servlet-api.jar` and the MySQL connector in `lib\`
+5. Package the classes and web files as a WAR, then deploy it to Tomcat's `webapps/` directory
+6. Start Tomcat and open:
    ```
    http://localhost:8080/online_exam/
    ```

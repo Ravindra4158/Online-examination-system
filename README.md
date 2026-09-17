@@ -137,5 +137,5 @@ See [`memory.md`](./memory.md) for current build status and session notes.
 
 ## 👤 Author
 
-[Your Name]
-B.Tech CSE (AI), 3rd Year
+Aaditya joshi
+

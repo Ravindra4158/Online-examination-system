@@ -94,10 +94,32 @@ This script will automatically:
 3. Update DB credentials in `src/com/examsystem/util/DBConnection.java`
 4. Compile using `lib\servlet-api.jar` and the MySQL connector in `lib\`
 5. Package the classes and web files as a WAR, then deploy it to Tomcat's `webapps/` directory
-6. Start Tomcat and open:
+6. Start Tomcat and open the login page:
    ```
    http://localhost:8080/online_exam/
    ```
+
+### Current Local Deployment
+
+The project is currently deployed with Apache Tomcat 10.1.60:
+
+```text
+C:\Users\Admin\Tomcat\apache-tomcat-10.1.60
+```
+
+The local login page is:
+
+```text
+http://localhost:8080/online_exam/
+```
+
+To start or stop this Tomcat instance manually:
+
+```powershell
+$env:CATALINA_HOME = "C:\Users\Admin\Tomcat\apache-tomcat-10.1.60"
+& "$env:CATALINA_HOME\bin\startup.bat"
+& "$env:CATALINA_HOME\bin\shutdown.bat"
+```
 
 ### Default Login Credentials
 
@@ -105,6 +127,18 @@ This script will automatically:
 |------|-------|----------|
 | Admin | `admin@exam.com` | `admin123` |
 | Student | `rahul@student.com` | `student123` |
+
+### Reset Test Attempts
+
+To clear submitted attempts while preserving users, questions, and exams, run:
+
+```sql
+USE exam_system;
+DELETE FROM student_answers;
+DELETE FROM results;
+```
+
+Do not run `schema.sql` when only resetting attempts. The schema script recreates the application tables and seed data.
 
 ---
 

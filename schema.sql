@@ -82,9 +82,9 @@ INSERT INTO users (name, email, password, role)
 VALUES ('Admin', 'admin@exam.com', '240be518fabd2724ddb6f04eeb1da5967448d7e831c08c8fa822809f74c720a9', 'admin');
 
 -- Sample Student user (password is 'student123' hashed with SHA-256)
--- 'student123' -> 065538e12d4a5da539be276f1839e931b262d9804b9c1d00f7ea63ecb4efcfd5
+-- 'student123' -> 703b0a3d6ad75b649a28adde7d83c6251da457549263bc7ff45ec709b0a8448b
 INSERT INTO users (name, email, password, role)
-VALUES ('Rahul Sharma', 'rahul@student.com', '065538e12d4a5da539be276f1839e931b262d9804b9c1d00f7ea63ecb4efcfd5', 'student');
+VALUES ('Rahul Sharma', 'rahul@student.com', '703b0a3d6ad75b649a28adde7d83c6251da457549263bc7ff45ec709b0a8448b', 'student');
 
 -- Seed Sample Questions for Java & DBMS
 INSERT INTO questions (subject, question_text, option_a, option_b, option_c, option_d, correct_option) VALUES

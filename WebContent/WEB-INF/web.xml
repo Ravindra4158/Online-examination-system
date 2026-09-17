@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns="https://jakarta.ee/xml/ns/jakartaee"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="https://jakarta.ee/xml/ns/jakartaee
+                             https://jakarta.ee/xml/ns/jakartaee/web-app_6_0.xsd"
+         version="6.0">
+
+    <display-name>Online Examination System</display-name>
+    <description>Advance Java Lab (5CAI4-24) Project - B.Tech CSE-AI 3rd Year</description>
+
+    <!-- ========================================================== -->
+    <!-- Authentication & Security Filter                           -->
+    <!-- ========================================================== -->
+    <filter>
+        <filter-name>AuthFilter</filter-name>
+        <filter-class>com.examsystem.filter.AuthFilter</filter-class>
+    </filter>
+    <filter-mapping>
+        <filter-name>AuthFilter</filter-name>
+        <url-pattern>/*</url-pattern>
+    </filter-mapping>
+
+    <!-- ========================================================== -->
+    <!-- Servlets Configuration                                     -->
+    <!-- ========================================================== -->
+
+    <!-- 1. Register Servlet -->
+    <servlet>
+        <servlet-name>RegisterServlet</servlet-name>
+        <servlet-class>com.examsystem.controller.RegisterServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>RegisterServlet</servlet-name>
+        <url-pattern>/register</url-pattern>
+    </servlet-mapping>
+
+    <!-- 2. Login Servlet -->
+    <servlet>
+        <servlet-name>LoginServlet</servlet-name>
+        <servlet-class>com.examsystem.controller.LoginServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>LoginServlet</servlet-name>
+        <url-pattern>/login</url-pattern>
+    </servlet-mapping>
+
+    <!-- 3. Logout Servlet -->
+    <servlet>
+        <servlet-name>LogoutServlet</servlet-name>
+        <servlet-class>com.examsystem.controller.LogoutServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>LogoutServlet</servlet-name>
+        <url-pattern>/logout</url-pattern>
+    </servlet-mapping>
+
+    <!-- 4. Add Question Servlet -->
+    <servlet>
+        <servlet-name>AddQuestionServlet</servlet-name>
+        <servlet-class>com.examsystem.controller.AddQuestionServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>AddQuestionServlet</servlet-name>
+        <url-pattern>/addQuestion</url-pattern>
+    </servlet-mapping>
+
+    <!-- 5. Create Test Servlet -->
+    <servlet>
+        <servlet-name>CreateTestServlet</servlet-name>
+        <servlet-class>com.examsystem.controller.CreateTestServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>CreateTestServlet</servlet-name>
+        <url-pattern>/createTest</url-pattern>
+    </servlet-mapping>
+
+    <!-- 6. Start Test Servlet -->
+    <servlet>
+        <servlet-name>StartTestServlet</servlet-name>
+        <servlet-class>com.examsystem.controller.StartTestServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>StartTestServlet</servlet-name>
+        <url-pattern>/startTest</url-pattern>
+    </servlet-mapping>
+
+    <!-- 7. Submit Test Servlet -->
+    <servlet>
+        <servlet-name>SubmitTestServlet</servlet-name>
+        <servlet-class>com.examsystem.controller.SubmitTestServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>SubmitTestServlet</servlet-name>
+        <url-pattern>/submitTest</url-pattern>
+    </servlet-mapping>
+
+    <!-- 8. View Results Servlet -->
+    <servlet>
+        <servlet-name>ViewResultsServlet</servlet-name>
+        <servlet-class>com.examsystem.controller.ViewResultsServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>ViewResultsServlet</servlet-name>
+        <url-pattern>/viewResults</url-pattern>
+    </servlet-mapping>
+
+    <!-- ========================================================== -->
+    <!-- Session Configuration                                      -->
+    <!-- ========================================================== -->
+    <session-config>
+        <!-- 30 minutes session timeout -->
+        <session-timeout>30</session-timeout>
+        <cookie-config>
+            <http-only>true</http-only>
+        </cookie-config>
+    </session-config>
+
+    <!-- ========================================================== -->
+    <!-- Welcome File List                                          -->
+    <!-- ========================================================== -->
+    <welcome-file-list>
+        <welcome-file>login.jsp</welcome-file>
+    </welcome-file-list>
+
+</web-app>

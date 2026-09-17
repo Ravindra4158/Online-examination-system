@@ -1,0 +1,9 @@
+Admin Account:
+Email: admin@exam.com
+Password: admin123
+Features to test: Add new questions, assemble tests, view student reports.
+Student Account:
+Email: rahul@student.com
+Password: student123
+(Or click "Register as Student" to self-register)
+Features to test: View "Core Java Basics" test, take exam with countdown timer, auto-submit/manual submit, view immediate graded score.

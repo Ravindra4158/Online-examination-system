@@ -42,6 +42,7 @@ public class AuthFilter implements Filter {
 
         // Public resources (allow unrestricted access)
         boolean isPublic = path.equals("/") ||
+                           path.equals("/TestVerseSplash.jsp") ||
                            path.equals("/login.jsp") ||
                            path.equals("/register.jsp") ||
                            path.equals("/login") ||

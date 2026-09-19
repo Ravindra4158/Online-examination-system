@@ -1,4 +1,4 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
+﻿<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
 <%@ taglib uri="jakarta.tags.core" prefix="c" %>
 <%@ taglib uri="jakarta.tags.fmt" prefix="fmt" %>
 <!DOCTYPE html>
@@ -6,15 +6,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Exam Result - Online Examination System</title>
+    <title>Exam Result - TestVerse</title>
     <link rel="stylesheet" href="${pageContext.request.contextPath}/css/style.css">
 </head>
 <body>
     <header class="app-header">
         <div class="header-container">
             <a href="${pageContext.request.contextPath}/studentDashboard.jsp" class="brand-link">
-                <div class="brand-icon">OE</div>
-                <span class="brand-title">ExamPortal</span>
+                <div class="brand-icon">TV</div>
+                <span class="brand-title">TestVerse</span>
             </a>
             <div class="user-nav">
                 <div class="user-profile">
@@ -32,7 +32,7 @@
     <main class="main-content">
         <div class="content-card content-card-sm" style="max-width: 580px;">
             <div class="result-box">
-                <div style="font-size: 2.5rem; margin-bottom: 0.5rem;">🎯</div>
+                <div style="font-size: 2.5rem; margin-bottom: 0.5rem;">ðŸŽ¯</div>
                 <h1 class="page-title">Examination Completed</h1>
                 <p class="page-subtitle"><c:out value="${result.testSubject}"/></p>
 
@@ -76,7 +76,7 @@
     </main>
 
     <footer class="app-footer">
-        <p>&copy; Advance Java Lab (5CAI4-24) — Online Examination System</p>
+        <p>&copy; Advance Java Lab (5CAI4-24) â€” TestVerse</p>
     </footer>
 </body>
 </html>

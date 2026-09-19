@@ -1,7 +1,7 @@
-# Product Requirement Document (PRD)
-## Online Examination System
+﻿# Product Requirement Document (PRD)
+## TestVerse
 
-**Prepared for:** Advance Java Lab (5CAI4-24) — B.Tech CSE (AI), 3rd Year
+**Prepared for:** Advance Java Lab (5CAI4-24) â€” B.Tech CSE (AI), 3rd Year
 **Prepared by:** [Your Name]
 **Date:** [Insert Date]
 **Version:** 1.0
@@ -11,10 +11,10 @@
 ## 1. Introduction
 
 ### 1.1 Purpose
-This document defines the requirements for an **Online Examination System**, a web-based platform that allows administrators to create and manage tests, and students to attempt and receive automatically evaluated results. The project is built using core Advance Java technologies: Servlets, JSP, JDBC, and Session Management.
+This document defines the requirements for an **TestVerse**, a web-based platform that allows administrators to create and manage tests, and students to attempt and receive automatically evaluated results. The project is built using core Advance Java technologies: Servlets, JSP, JDBC, and Session Management.
 
 ### 1.2 Scope
-The system will support two user roles — **Admin** and **Student**. Admins can create question banks and tests; students can log in, attempt tests within a time limit, and view their results instantly. The system automates evaluation, removing the need for manual grading of objective (MCQ) tests.
+The system will support two user roles â€” **Admin** and **Student**. Admins can create question banks and tests; students can log in, attempt tests within a time limit, and view their results instantly. The system automates evaluation, removing the need for manual grading of objective (MCQ) tests.
 
 ### 1.3 Intended Audience
 This document is intended for academic evaluation purposes and serves as a reference for project development, implementation, and testing.
@@ -128,12 +128,12 @@ This document is intended for academic evaluation purposes and serves as a refer
 ## 8. Database Design
 
 ### 8.1 Entity Overview
-- `users` — stores login credentials and role
-- `questions` — stores question bank
-- `tests` — stores test configuration
-- `test_questions` — maps questions to a test
-- `results` — stores student scores
-- `student_answers` — stores selected answers per question (for review, optional)
+- `users` â€” stores login credentials and role
+- `questions` â€” stores question bank
+- `tests` â€” stores test configuration
+- `test_questions` â€” maps questions to a test
+- `results` â€” stores student scores
+- `student_answers` â€” stores selected answers per question (for review, optional)
 
 ### 8.2 Schema
 
@@ -213,7 +213,7 @@ CREATE TABLE student_answers (
 |---|---|
 | `login.jsp` | Login form for admin/student |
 | `register.jsp` | Student registration form |
-| `adminDashboard.jsp` | Admin home — links to manage questions/tests/results |
+| `adminDashboard.jsp` | Admin home â€” links to manage questions/tests/results |
 | `addQuestion.jsp` | Form to add a question |
 | `createTest.jsp` | Form to configure a new test |
 | `studentDashboard.jsp` | List of available tests for student |
@@ -242,7 +242,7 @@ CREATE TABLE student_answers (
 
 ---
 
-## 13. Mapping to Lab Syllabus (Advance Java Lab — 5CAI4-24)
+## 13. Mapping to Lab Syllabus (Advance Java Lab â€” 5CAI4-24)
 
 | Syllabus Experiment | Covered By |
 |---|---|

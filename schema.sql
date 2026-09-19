@@ -1,5 +1,5 @@
--- ==========================================================
--- Online Examination System Database Schema
+﻿-- ==========================================================
+-- TestVerse Database Schema
 -- Advance Java Lab (5CAI4-24), B.Tech CSE-AI, 3rd Year
 -- Database: exam_system
 -- ==========================================================

@@ -1,5 +1,5 @@
 /* ==========================================================
-   Online Examination System - Global Design System
+    TestVerse - Global Design System
    Advance Java Lab (5CAI4-24), B.Tech CSE-AI, 3rd Year
    ========================================================== */
 
@@ -44,6 +44,74 @@ body {
     min-height: 100vh;
     display: flex;
     flex-direction: column;
+}
+
+/* ================= Splash Screen ================= */
+.splash-page {
+    background: #F8FAFC;
+}
+
+.testverse-splash {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem;
+    text-align: center;
+    color: var(--primary);
+    opacity: 1;
+    transition: opacity 300ms ease;
+}
+
+.testverse-splash.is-fading {
+    opacity: 0;
+}
+
+.splash-mark {
+    width: 72px;
+    height: 72px;
+    display: grid;
+    place-items: center;
+    margin-bottom: 1.5rem;
+    border-radius: var(--radius-md);
+    background: var(--primary);
+    color: #FFFFFF;
+    font-size: 1.75rem;
+    font-weight: 700;
+    box-shadow: var(--shadow-md);
+    animation: splash-fade-in 700ms ease both;
+}
+
+.testverse-splash h1,
+.splash-kicker,
+.splash-tagline {
+    animation: splash-fade-in 700ms ease 120ms both;
+}
+
+.testverse-splash h1 {
+    font-size: clamp(2.25rem, 6vw, 4rem);
+    line-height: 1.1;
+}
+
+.splash-kicker {
+    margin-bottom: 0.5rem;
+    color: var(--secondary);
+    font-size: 0.85rem;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+}
+
+.splash-tagline {
+    max-width: 28rem;
+    margin-top: 0.75rem;
+    color: var(--text-muted);
+}
+
+@keyframes splash-fade-in {
+    from { opacity: 0; transform: translateY(8px); }
+    to { opacity: 1; transform: translateY(0); }
 }
 
 /* ================= Header & Navigation ================= */

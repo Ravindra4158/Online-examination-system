@@ -1,14 +1,14 @@
-# Design Document
-## Online Examination System
+﻿# Design Document
+## TestVerse
 
-Visual and UX design reference for a clean, low-distraction interface — important for an exam-taking app where clarity beats decoration.
+Visual and UX design reference for a clean, low-distraction interface â€” important for an exam-taking app where clarity beats decoration.
 
 ---
 
 ## 1. Design Principles
 
 - **Clarity over decoration.** A student under time pressure should never be confused about what to click.
-- **No surprises during a test.** Nothing on `takeTest.jsp` should move, resize, or pop up unexpectedly — it breaks focus and risks losing time.
+- **No surprises during a test.** Nothing on `takeTest.jsp` should move, resize, or pop up unexpectedly â€” it breaks focus and risks losing time.
 - **Consistent chrome.** Header/nav stays identical across all pages so the app feels like one system, not disconnected screens.
 - **Obvious system state.** Logged-in user's name/role always visible; timer always visible during a test; success/error messages always in the same location.
 
@@ -27,7 +27,7 @@ Visual and UX design reference for a clean, low-distraction interface — import
 | Surface | White | `#FFFFFF` | Cards, forms, tables |
 | Border | Light Gray | `#E2E8F0` | Table borders, input borders |
 
-Keep it to this palette — avoid introducing new colors per page.
+Keep it to this palette â€” avoid introducing new colors per page.
 
 ---
 
@@ -43,18 +43,18 @@ Keep it to this palette — avoid introducing new colors per page.
 ## 4. Layout Structure (shared across pages)
 
 ```
-┌──────────────────────────────────────────────────────┐
-│  HEADER: Logo/Title | [User: Name (Role)] | Logout    │
-├──────────────────────────────────────────────────────┤
-│                                                          │
-│                   PAGE CONTENT (card)                   │
-│                                                          │
-├──────────────────────────────────────────────────────┤
-│  FOOTER: (optional) course/project name, small text     │
-└──────────────────────────────────────────────────────┘
+â”Œâ”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”
+â”‚  HEADER: Logo/Title | [User: Name (Role)] | Logout    â”‚
+â”œâ”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”¤
+â”‚                                                          â”‚
+â”‚                   PAGE CONTENT (card)                   â”‚
+â”‚                                                          â”‚
+â”œâ”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”¤
+â”‚  FOOTER: (optional) course/project name, small text     â”‚
+â””â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”˜
 ```
 
-- Max content width ~900px, centered — avoids overly wide lines of text/forms on large screens.
+- Max content width ~900px, centered â€” avoids overly wide lines of text/forms on large screens.
 - Content sits inside a white "card" (`box-shadow`, rounded corners) against the off-white page background.
 
 ---
@@ -69,11 +69,11 @@ Keep it to this palette — avoid introducing new colors per page.
 
 ### 5.2 `adminDashboard.jsp`
 - Simple menu/card grid: "Manage Questions", "Create Test", "View Reports"
-- Each card links to its respective page — no deep nesting of menus
+- Each card links to its respective page â€” no deep nesting of menus
 
 ### 5.3 `addQuestion.jsp`
 - Question text as a textarea (not single-line input)
-- Four option fields labeled A–D
+- Four option fields labeled Aâ€“D
 - Radio buttons to mark which option is correct
 - Table below the form listing existing questions with Edit/Delete actions
 
@@ -84,19 +84,19 @@ Keep it to this palette — avoid introducing new colors per page.
 
 ### 5.5 `studentDashboard.jsp`
 - Card list of available tests: subject, duration, marks, a "Start Test" button
-- If a test was already attempted, show "Completed — Score: X/Y" instead of the Start button
+- If a test was already attempted, show "Completed â€” Score: X/Y" instead of the Start button
 
-### 5.6 `takeTest.jsp` — most important screen
+### 5.6 `takeTest.jsp` â€” most important screen
 - **Sticky header row** showing: test subject + countdown timer (top-right, always visible while scrolling)
-- One question per block: question text, then 4 radio-button options (A–D)
+- One question per block: question text, then 4 radio-button options (Aâ€“D)
 - Progress indicator: "Question 3 of 10 answered" or a simple progress bar
-- Timer color changes: Slate Gray → Amber (under 5 min) → Red (under 1 min)
+- Timer color changes: Slate Gray â†’ Amber (under 5 min) â†’ Red (under 1 min)
 - Submit button fixed at the bottom; confirm dialog ("Are you sure you want to submit?") before manual submit
-- On auto-submit (timer hits 0): disable all inputs immediately, show "Time's up — submitting..." message, then redirect to `result.jsp`
+- On auto-submit (timer hits 0): disable all inputs immediately, show "Time's up â€” submitting..." message, then redirect to `result.jsp`
 
 ### 5.7 `result.jsp`
 - Large, centered score display: `Score: 8 / 10`
-- Optional: color-coded (green if ≥ 60%, amber 40–60%, red < 40%) — adjust thresholds as needed
+- Optional: color-coded (green if â‰¥ 60%, amber 40â€“60%, red < 40%) â€” adjust thresholds as needed
 - Button back to `studentDashboard.jsp`
 
 ### 5.8 `viewReport.jsp`
@@ -149,7 +149,7 @@ Keep it to this palette — avoid introducing new colors per page.
 
 - Ensure sufficient contrast between text and background (the palette above meets WCAG AA for body text)
 - Label all form inputs properly (`<label for="...">`) rather than placeholder-only text
-- Radio button groups should be keyboard-navigable (native `<input type="radio">` already supports this — don't replace with custom JS-only widgets)
+- Radio button groups should be keyboard-navigable (native `<input type="radio">` already supports this â€” don't replace with custom JS-only widgets)
 
 ---
 
@@ -159,4 +159,4 @@ Given this is a lab project, don't over-invest time in:
 - Dark mode
 - Animations/transitions beyond simple hover states
 - Mobile-first responsive design (desktop/laptop is the expected demo environment)
-- Custom icon sets — plain text labels are fine
+- Custom icon sets â€” plain text labels are fine

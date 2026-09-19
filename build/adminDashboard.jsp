@@ -1,11 +1,11 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
+﻿<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
 <%@ taglib uri="jakarta.tags.core" prefix="c" %>
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Admin Dashboard - Online Examination System</title>
+    <title>Admin Dashboard - TestVerse</title>
     <link rel="stylesheet" href="${pageContext.request.contextPath}/css/style.css">
 </head>
 <body>
@@ -13,8 +13,8 @@
     <header class="app-header">
         <div class="header-container">
             <a href="${pageContext.request.contextPath}/adminDashboard.jsp" class="brand-link">
-                <div class="brand-icon">OE</div>
-                <span class="brand-title">ExamPortal</span>
+                <div class="brand-icon">TV</div>
+                <span class="brand-title">TestVerse</span>
             </a>
             <div class="user-nav">
                 <div class="user-profile">
@@ -54,7 +54,7 @@
                 <!-- Manage Questions Card -->
                 <div class="dash-card">
                     <div>
-                        <div class="dash-card-icon">📚</div>
+                        <div class="dash-card-icon">ðŸ“š</div>
                         <h2 class="dash-card-title">Manage Questions</h2>
                         <p class="dash-card-desc">Add new multiple-choice questions, update options, or delete items from the central question bank.</p>
                     </div>
@@ -64,7 +64,7 @@
                 <!-- Create Test Card -->
                 <div class="dash-card">
                     <div>
-                        <div class="dash-card-icon">📝</div>
+                        <div class="dash-card-icon">ðŸ“</div>
                         <h2 class="dash-card-title">Create Test</h2>
                         <p class="dash-card-desc">Assemble timed tests by setting subjects, time limits, total marks, and picking questions from the repository.</p>
                     </div>
@@ -74,7 +74,7 @@
                 <!-- View Reports Card -->
                 <div class="dash-card">
                     <div>
-                        <div class="dash-card-icon">📊</div>
+                        <div class="dash-card-icon">ðŸ“Š</div>
                         <h2 class="dash-card-title">View Reports</h2>
                         <p class="dash-card-desc">Review student test submission records, calculate score distributions, and monitor exam performance.</p>
                     </div>
@@ -85,7 +85,7 @@
     </main>
 
     <footer class="app-footer">
-        <p>&copy; Advance Java Lab (5CAI4-24) — Online Examination System</p>
+        <p>&copy; Advance Java Lab (5CAI4-24) â€” TestVerse</p>
     </footer>
 </body>
 </html>

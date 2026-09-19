@@ -1,20 +1,20 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
+﻿<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
 <%@ taglib uri="jakarta.tags.core" prefix="c" %>
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login - Online Examination System</title>
+    <title>Login - TestVerse</title>
     <link rel="stylesheet" href="${pageContext.request.contextPath}/css/style.css">
 </head>
 <body>
     <main class="main-content" style="justify-content: center;">
         <div class="content-card content-card-sm">
             <div class="card-header" style="text-align: center; display: block; border-bottom: none; margin-bottom: 1.25rem;">
-                <div class="brand-icon" style="margin: 0 auto 0.75rem; width: 44px; height: 44px; font-size: 22px;">OE</div>
+                <div class="brand-icon" style="margin: 0 auto 0.75rem; width: 44px; height: 44px; font-size: 22px;">TV</div>
                 <h1 class="page-title">Sign In</h1>
-                <p class="page-subtitle">Online Examination System</p>
+                <p class="page-subtitle">TestVerse</p>
             </div>
 
             <!-- Error Banners -->
@@ -52,7 +52,7 @@
                 <div class="form-group">
                     <label for="password" class="form-label">Password</label>
                     <input type="password" id="password" name="password" class="form-control" 
-                           placeholder="••••••••" required>
+                           placeholder="â€¢â€¢â€¢â€¢â€¢â€¢â€¢â€¢" required>
                 </div>
 
                 <div class="form-group" style="margin-top: 1.5rem;">
@@ -68,7 +68,7 @@
     </main>
 
     <footer class="app-footer">
-        <p>&copy; Advance Java Lab (5CAI4-24) — Online Examination System</p>
+        <p>&copy; Advance Java Lab (5CAI4-24) â€” TestVerse</p>
     </footer>
 </body>
 </html>

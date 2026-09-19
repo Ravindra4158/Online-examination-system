@@ -1,18 +1,18 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
+﻿<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
 <%@ taglib uri="jakarta.tags.core" prefix="c" %>
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Student Registration - Online Examination System</title>
+    <title>Student Registration - TestVerse</title>
     <link rel="stylesheet" href="${pageContext.request.contextPath}/css/style.css">
 </head>
 <body>
     <main class="main-content" style="justify-content: center;">
         <div class="content-card content-card-sm">
             <div class="card-header" style="text-align: center; display: block; border-bottom: none; margin-bottom: 1.25rem;">
-                <div class="brand-icon" style="margin: 0 auto 0.75rem; width: 44px; height: 44px; font-size: 22px;">OE</div>
+                <div class="brand-icon" style="margin: 0 auto 0.75rem; width: 44px; height: 44px; font-size: 22px;">TV</div>
                 <h1 class="page-title">Student Registration</h1>
                 <p class="page-subtitle">Create your student exam account</p>
             </div>
@@ -63,7 +63,7 @@
     </main>
 
     <footer class="app-footer">
-        <p>&copy; Advance Java Lab (5CAI4-24) — Online Examination System</p>
+        <p>&copy; Advance Java Lab (5CAI4-24) â€” TestVerse</p>
     </footer>
 </body>
 </html>

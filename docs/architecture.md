@@ -1,7 +1,7 @@
-# System Architecture Document
-## Online Examination System
+﻿# System Architecture Document
+## TestVerse
 
-**Related Document:** Online_Examination_System_PRD.md
+**Related Document:** TestVerse_PRD.md
 **Version:** 1.0
 
 ---
@@ -11,30 +11,30 @@
 The system follows a **3-tier (n-tier) J2EE web architecture**, separating presentation, business logic, and data layers. This mirrors the MVC-influenced pattern typically used with Servlets and JSP.
 
 ```
-┌─────────────────────────────────────────────────────────────┐
-│                        CLIENT TIER                            │
-│                    (Browser - HTML/CSS/JS)                    │
-└───────────────────────────┬────────────────────────────────┘
-                             │ HTTP Request / Response
-┌───────────────────────────▼────────────────────────────────┐
-│                     PRESENTATION TIER                         │
-│              JSP Pages (View) + Servlets (Controller)         │
-│   login.jsp, takeTest.jsp, adminDashboard.jsp, etc.            │
-│   LoginServlet, SubmitTestServlet, CreateTestServlet, etc.     │
-└───────────────────────────┬────────────────────────────────┘
-                             │ Java Method Calls
-┌───────────────────────────▼────────────────────────────────┐
-│                      BUSINESS LOGIC TIER                      │
-│        DAO classes (UserDAO, QuestionDAO, TestDAO,            │
-│        ResultDAO) + Helper/Utility classes                    │
-│        Score evaluation logic, session/timer logic            │
-└───────────────────────────┬────────────────────────────────┘
-                             │ JDBC
-┌───────────────────────────▼────────────────────────────────┐
-│                         DATA TIER                              │
-│                     MySQL Database                            │
-│   users | questions | tests | test_questions | results        │
-└─────────────────────────────────────────────────────────────┘
+â”Œâ”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”
+â”‚                        CLIENT TIER                            â”‚
+â”‚                    (Browser - HTML/CSS/JS)                    â”‚
+â””â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”¬â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”˜
+                             â”‚ HTTP Request / Response
+â”Œâ”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â–¼â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”
+â”‚                     PRESENTATION TIER                         â”‚
+â”‚              JSP Pages (View) + Servlets (Controller)         â”‚
+â”‚   login.jsp, takeTest.jsp, adminDashboard.jsp, etc.            â”‚
+â”‚   LoginServlet, SubmitTestServlet, CreateTestServlet, etc.     â”‚
+â””â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”¬â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”˜
+                             â”‚ Java Method Calls
+â”Œâ”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â–¼â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”
+â”‚                      BUSINESS LOGIC TIER                      â”‚
+â”‚        DAO classes (UserDAO, QuestionDAO, TestDAO,            â”‚
+â”‚        ResultDAO) + Helper/Utility classes                    â”‚
+â”‚        Score evaluation logic, session/timer logic            â”‚
+â””â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”¬â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”˜
+                             â”‚ JDBC
+â”Œâ”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â–¼â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”
+â”‚                         DATA TIER                              â”‚
+â”‚                     MySQL Database                            â”‚
+â”‚   users | questions | tests | test_questions | results        â”‚
+â””â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”˜
 ```
 
 ---
@@ -47,9 +47,9 @@ The system follows a **3-tier (n-tier) J2EE web architecture**, separating prese
 - Sends form submissions (login, test answers) via HTTP GET/POST
 
 ### 2.2 Presentation Tier (JSP + Servlets)
-- **JSP pages** — pure display logic; use JSTL/EL to loop over data passed via `request`/`session` attributes (no embedded business logic or JDBC calls in JSP)
-- **Servlets** — act as controllers; receive requests, invoke DAO layer, set attributes, forward to appropriate JSP
-- **Filters** — (optional, per syllabus Exp 5) used for authentication checks, e.g. blocking access to `adminDashboard.jsp` unless `session.getAttribute("role")` equals `"admin"`
+- **JSP pages** â€” pure display logic; use JSTL/EL to loop over data passed via `request`/`session` attributes (no embedded business logic or JDBC calls in JSP)
+- **Servlets** â€” act as controllers; receive requests, invoke DAO layer, set attributes, forward to appropriate JSP
+- **Filters** â€” (optional, per syllabus Exp 5) used for authentication checks, e.g. blocking access to `adminDashboard.jsp` unless `session.getAttribute("role")` equals `"admin"`
 
 ### 2.3 Business Logic Tier (DAO Layer)
 - Encapsulates all database access behind Data Access Objects, keeping Servlets free of raw SQL
@@ -65,58 +65,58 @@ The system follows a **3-tier (n-tier) J2EE web architecture**, separating prese
 ## 3. Package Structure (Suggested)
 
 ```
-OnlineExamSystem/
-│
-├── src/
-│   └── com/
-│       └── examsystem/
-│           ├── controller/          → All Servlets
-│           │   ├── LoginServlet.java
-│           │   ├── RegisterServlet.java
-│           │   ├── LogoutServlet.java
-│           │   ├── AddQuestionServlet.java
-│           │   ├── CreateTestServlet.java
-│           │   ├── StartTestServlet.java
-│           │   ├── SubmitTestServlet.java
-│           │   └── ViewResultsServlet.java
-│           │
-│           ├── dao/                 → Data Access Objects
-│           │   ├── UserDAO.java
-│           │   ├── QuestionDAO.java
-│           │   ├── TestDAO.java
-│           │   └── ResultDAO.java
-│           │
-│           ├── model/               → POJOs / entity classes
-│           │   ├── User.java
-│           │   ├── Question.java
-│           │   ├── Test.java
-│           │   └── Result.java
-│           │
-│           ├── util/                → Utility/helper classes
-│           │   └── DBConnection.java
-│           │
-│           └── filter/              → Servlet filters
-│               └── AuthFilter.java
-│
-├── WebContent/ (or webapp/)
-│   ├── login.jsp
-│   ├── register.jsp
-│   ├── adminDashboard.jsp
-│   ├── addQuestion.jsp
-│   ├── createTest.jsp
-│   ├── studentDashboard.jsp
-│   ├── takeTest.jsp
-│   ├── result.jsp
-│   ├── viewReport.jsp
-│   ├── css/
-│   │   └── style.css
-│   ├── js/
-│   │   └── timer.js
-│   └── WEB-INF/
-│       └── web.xml
-│
-└── lib/
-    └── mysql-connector-j-x.x.x.jar
+TestVerse/
+â”‚
+â”œâ”€â”€ src/
+â”‚   â””â”€â”€ com/
+â”‚       â””â”€â”€ examsystem/
+â”‚           â”œâ”€â”€ controller/          â†’ All Servlets
+â”‚           â”‚   â”œâ”€â”€ LoginServlet.java
+â”‚           â”‚   â”œâ”€â”€ RegisterServlet.java
+â”‚           â”‚   â”œâ”€â”€ LogoutServlet.java
+â”‚           â”‚   â”œâ”€â”€ AddQuestionServlet.java
+â”‚           â”‚   â”œâ”€â”€ CreateTestServlet.java
+â”‚           â”‚   â”œâ”€â”€ StartTestServlet.java
+â”‚           â”‚   â”œâ”€â”€ SubmitTestServlet.java
+â”‚           â”‚   â””â”€â”€ ViewResultsServlet.java
+â”‚           â”‚
+â”‚           â”œâ”€â”€ dao/                 â†’ Data Access Objects
+â”‚           â”‚   â”œâ”€â”€ UserDAO.java
+â”‚           â”‚   â”œâ”€â”€ QuestionDAO.java
+â”‚           â”‚   â”œâ”€â”€ TestDAO.java
+â”‚           â”‚   â””â”€â”€ ResultDAO.java
+â”‚           â”‚
+â”‚           â”œâ”€â”€ model/               â†’ POJOs / entity classes
+â”‚           â”‚   â”œâ”€â”€ User.java
+â”‚           â”‚   â”œâ”€â”€ Question.java
+â”‚           â”‚   â”œâ”€â”€ Test.java
+â”‚           â”‚   â””â”€â”€ Result.java
+â”‚           â”‚
+â”‚           â”œâ”€â”€ util/                â†’ Utility/helper classes
+â”‚           â”‚   â””â”€â”€ DBConnection.java
+â”‚           â”‚
+â”‚           â””â”€â”€ filter/              â†’ Servlet filters
+â”‚               â””â”€â”€ AuthFilter.java
+â”‚
+â”œâ”€â”€ WebContent/ (or webapp/)
+â”‚   â”œâ”€â”€ login.jsp
+â”‚   â”œâ”€â”€ register.jsp
+â”‚   â”œâ”€â”€ adminDashboard.jsp
+â”‚   â”œâ”€â”€ addQuestion.jsp
+â”‚   â”œâ”€â”€ createTest.jsp
+â”‚   â”œâ”€â”€ studentDashboard.jsp
+â”‚   â”œâ”€â”€ takeTest.jsp
+â”‚   â”œâ”€â”€ result.jsp
+â”‚   â”œâ”€â”€ viewReport.jsp
+â”‚   â”œâ”€â”€ css/
+â”‚   â”‚   â””â”€â”€ style.css
+â”‚   â”œâ”€â”€ js/
+â”‚   â”‚   â””â”€â”€ timer.js
+â”‚   â””â”€â”€ WEB-INF/
+â”‚       â””â”€â”€ web.xml
+â”‚
+â””â”€â”€ lib/
+    â””â”€â”€ mysql-connector-j-x.x.x.jar
 ```
 
 ---
@@ -126,37 +126,37 @@ OnlineExamSystem/
 ### 4.1 Login Flow
 ```
 Browser (login.jsp form POST)
-   → LoginServlet
-       → UserDAO.validateUser(email, password)
-           → JDBC query on `users` table
-       → if valid: session.setAttribute("user", user); redirect by role
-       → if invalid: forward back to login.jsp with error message
+   â†’ LoginServlet
+       â†’ UserDAO.validateUser(email, password)
+           â†’ JDBC query on `users` table
+       â†’ if valid: session.setAttribute("user", user); redirect by role
+       â†’ if invalid: forward back to login.jsp with error message
 ```
 
 ### 4.2 Take Test Flow
 ```
 Browser (clicks "Start Test" on studentDashboard.jsp)
-   → StartTestServlet
-       → TestDAO.getQuestionsForTest(testId)
-       → session.setAttribute("startTime", System.currentTimeMillis())
-       → forward to takeTest.jsp (renders questions + starts JS timer)
+   â†’ StartTestServlet
+       â†’ TestDAO.getQuestionsForTest(testId)
+       â†’ session.setAttribute("startTime", System.currentTimeMillis())
+       â†’ forward to takeTest.jsp (renders questions + starts JS timer)
 
 Browser (submits answers, or JS auto-submits at time limit)
-   → SubmitTestServlet
-       → Read selected options from request
-       → ResultDAO.evaluateAndSave(userId, testId, answers)
-           → Compare answers against `correct_option` in `questions`
-           → Insert into `results` and `student_answers`
-       → forward to result.jsp with score
+   â†’ SubmitTestServlet
+       â†’ Read selected options from request
+       â†’ ResultDAO.evaluateAndSave(userId, testId, answers)
+           â†’ Compare answers against `correct_option` in `questions`
+           â†’ Insert into `results` and `student_answers`
+       â†’ forward to result.jsp with score
 ```
 
 ### 4.3 Admin Creates Test Flow
 ```
 Browser (createTest.jsp form POST)
-   → CreateTestServlet
-       → TestDAO.createTest(subject, duration, marks)
-       → TestDAO.linkQuestions(testId, selectedQuestionIds)
-       → redirect to adminDashboard.jsp with success message
+   â†’ CreateTestServlet
+       â†’ TestDAO.createTest(subject, duration, marks)
+       â†’ TestDAO.linkQuestions(testId, selectedQuestionIds)
+       â†’ redirect to adminDashboard.jsp with success message
 ```
 
 ---
@@ -178,7 +178,7 @@ Browser (createTest.jsp form POST)
 ## 6. Security Considerations
 
 - **AuthFilter** intercepts requests to admin/student protected pages and redirects unauthenticated users to `login.jsp`.
-- Passwords should at minimum be hashed (e.g., using `MessageDigest` for SHA-256) rather than stored in plain text — acceptable simplification for a lab project, but worth mentioning as a design decision.
+- Passwords should at minimum be hashed (e.g., using `MessageDigest` for SHA-256) rather than stored in plain text â€” acceptable simplification for a lab project, but worth mentioning as a design decision.
 - Use `PreparedStatement` (not raw `Statement`) everywhere to prevent SQL injection.
 - Validate that a student cannot access `SubmitTestServlet` directly without first going through `StartTestServlet` (check `session.getAttribute("currentTestId")` is not null).
 
@@ -188,14 +188,14 @@ Browser (createTest.jsp form POST)
 
 ```
 Developer Machine
-   ├── Eclipse/IntelliJ (project source)
-   ├── Apache Tomcat 9/10 (local server, port 8080)
-   └── MySQL Server (local instance, port 3306)
+   â”œâ”€â”€ Eclipse/IntelliJ (project source)
+   â”œâ”€â”€ Apache Tomcat 9/10 (local server, port 8080)
+   â””â”€â”€ MySQL Server (local instance, port 3306)
 
 Runtime:
-Browser → http://localhost:8080/OnlineExamSystem/login.jsp
-             → Tomcat servlet container
-                 → JDBC connection → MySQL (exam_system database)
+Browser â†’ http://localhost:8080/TestVerse/login.jsp
+             â†’ Tomcat servlet container
+                 â†’ JDBC connection â†’ MySQL (exam_system database)
 ```
 
 ---
@@ -204,7 +204,7 @@ Browser → http://localhost:8080/OnlineExamSystem/login.jsp
 
 | Architecture Component | Syllabus Experiment |
 |---|---|
-| DAO Layer + JDBC | Exp 2 — Java database programming, JDBC |
-| n-tier structure, Web container | Exp 4 — J2EE architecture, enterprise application concepts |
-| Servlets, AuthFilter, Session | Exp 5 — Server-side programming, session/event handling, filters |
-| JSP pages, JSTL | Exp 6 — JSP architecture, tag libraries |
+| DAO Layer + JDBC | Exp 2 â€” Java database programming, JDBC |
+| n-tier structure, Web container | Exp 4 â€” J2EE architecture, enterprise application concepts |
+| Servlets, AuthFilter, Session | Exp 5 â€” Server-side programming, session/event handling, filters |
+| JSP pages, JSTL | Exp 6 â€” JSP architecture, tag libraries |

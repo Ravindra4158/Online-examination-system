@@ -1,7 +1,7 @@
-# Project Memory
-## Online Examination System
+﻿# Project Memory
+## TestVerse
 
-A living log of decisions, current status, and context — updated as the project progresses.
+A living log of decisions, current status, and context â€” updated as the project progresses.
 
 ---
 
@@ -9,11 +9,11 @@ A living log of decisions, current status, and context — updated as the projec
 
 | Field | Value |
 |---|---|
-| Project Name | Online Examination System |
+| Project Name | TestVerse |
 | Course | Advance Java Lab (5CAI4-24), B.Tech CSE (AI), 3rd Year |
 | Stack | Java Servlets, JSP, JDBC, MySQL, Apache Tomcat |
 | Related Docs | `PRD.md`, `architecture.md`, `rules.md`, `phases.md`, `design.md` |
-| Current Phase | Phase 7 — Build Completed & Ready for Deployment |
+| Current Phase | Phase 7 â€” Build Completed & Ready for Deployment |
 | Last Updated | September 2026 |
 
 ---

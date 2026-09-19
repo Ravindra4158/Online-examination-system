@@ -1,5 +1,5 @@
-# Development Phases
-## Online Examination System
+﻿# Development Phases
+## TestVerse
 
 Phase-wise build checklist and completion status.
 
@@ -25,11 +25,11 @@ Phase-wise build checklist and completion status.
 - [x] Implement session creation on login (`user`, `role` attributes)
 - [x] Build `LogoutServlet` (`session.invalidate()`)
 - [x] Build `AuthFilter` to protect dashboard URLs and prevent direct unauthenticated access
-- [x] Redirect admin → `adminDashboard.jsp`, student → `studentDashboard.jsp`
+- [x] Redirect admin â†’ `adminDashboard.jsp`, student â†’ `studentDashboard.jsp`
 
 ---
 
-## Phase 2: Admin — Question & Test Management
+## Phase 2: Admin â€” Question & Test Management
 **Goal:** Admin can build a question bank and assemble tests from it.
 
 - [x] Build `addQuestion.jsp` + `AddQuestionServlet` + `QuestionDAO`
@@ -40,15 +40,15 @@ Phase-wise build checklist and completion status.
 
 ---
 
-## Phase 3: Student — Taking a Test
+## Phase 3: Student â€” Taking a Test
 **Goal:** Student can view, start, and attempt a test end-to-end.
 
 - [x] Build `studentDashboard.jsp` listing available tests (`TestDAO.getAllTests()`)
-- [x] Build `StartTestServlet` — loads questions (sanitizing correct options), sets `currentTestId` and `startTime` in session
-- [x] Build `takeTest.jsp` — renders questions with radio button options via JSTL loop
+- [x] Build `StartTestServlet` â€” loads questions (sanitizing correct options), sets `currentTestId` and `startTime` in session
+- [x] Build `takeTest.jsp` â€” renders questions with radio button options via JSTL loop
 - [x] Add JS countdown timer (`timer.js`) with auto-submit trigger on expiry
-- [x] Build `SubmitTestServlet` — reads answers, calls `ResultDAO.evaluateAndSave()`
-- [x] Build `result.jsp` — shows score immediately after submission
+- [x] Build `SubmitTestServlet` â€” reads answers, calls `ResultDAO.evaluateAndSave()`
+- [x] Build `result.jsp` â€” shows score immediately after submission
 
 ---
 

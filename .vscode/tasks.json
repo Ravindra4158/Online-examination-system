@@ -1,0 +1,23 @@
+{
+	"version": "2.0.0",
+	"tasks": [
+		{
+			"label": "Check and start requested Tomcat",
+			"type": "shell",
+			"command": "$tomcat='C:\\Users\\Admin\\Tomcat\\apache-tomcat-10.1.60'; $listener=Get-NetTCPConnection -LocalPort 8080 -State Listen -ErrorAction SilentlyContinue; if ($listener) { Write-Output ('PORT_8080_PID=' + (($listener | Select-Object -ExpandProperty OwningProcess) -join ',')); } else { $env:CATALINA_HOME=$tomcat; & \"$tomcat\\bin\\startup.bat\"; };",
+			"problemMatcher": []
+		},
+		{
+			"label": "Verify Tomcat process and URLs",
+			"type": "shell",
+			"command": "$tomcat='C:\\Users\\Admin\\Tomcat\\apache-tomcat-10.1.60'; Write-Output '---PROCESS---'; Get-CimInstance Win32_Process -Filter \"ProcessId=8616\" | Select-Object ProcessId,Name,CommandLine | Format-List; Write-Output '---HTTP---'; foreach ($url in @('http://localhost:8080/testverse/','http://localhost:8080/online_exam/')) { try { $r=Invoke-WebRequest -Uri $url -UseBasicParsing -MaximumRedirection 0; Write-Output (\"$url STATUS=\" + [int]$r.StatusCode + ' TITLE=' + (($r.Content -replace '<[^>]+>',' ' -replace '\\s+',' ').Trim().Substring(0,[Math]::Min(100,(($r.Content -replace '<[^>]+>',' ' -replace '\\s+',' ').Trim()).Length)))) } catch { if ($_.Exception.Response) { Write-Output (\"$url STATUS=\" + [int]$_.Exception.Response.StatusCode) } else { Write-Output (\"$url ERROR=\" + $_.Exception.Message) } } }; Write-Output '---DEPLOYMENT---'; Get-ChildItem \"$tomcat\\webapps\" -Force | Where-Object { $_.Name -match 'testverse|online_exam|OnlineExamSystem' } | Select-Object Name,Length,LastWriteTime | Format-Table -AutoSize",
+			"problemMatcher": []
+		},
+		{
+			"label": "Verify deployment status",
+			"type": "shell",
+			"command": "$tomcat='C:\\Users\\Admin\\Tomcat\\apache-tomcat-10.1.60'; Write-Output '---PROCESS---'; Get-CimInstance Win32_Process -Filter \"ProcessId=8616\" | Select-Object ProcessId,Name,CommandLine | Format-List; Write-Output '---DEPLOYMENT---'; Get-ChildItem \"$tomcat\\webapps\" -Force | Where-Object { $_.Name -match 'testverse|online_exam|OnlineExamSystem' } | Select-Object Name,Length,LastWriteTime | Format-Table -AutoSize; Write-Output '---HTTP---'; try { $r=Invoke-WebRequest -Uri 'http://localhost:8080/testverse/' -UseBasicParsing; Write-Output ('testverse=' + [int]$r.StatusCode) } catch { Write-Output ('testverse=' + [int]$_.Exception.Response.StatusCode) }; try { $r=Invoke-WebRequest -Uri 'http://localhost:8080/online_exam/' -UseBasicParsing; Write-Output ('online_exam=' + [int]$r.StatusCode) } catch { Write-Output ('online_exam=' + [int]$_.Exception.Response.StatusCode) }",
+			"problemMatcher": []
+		}
+	]
+}

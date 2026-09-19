@@ -1,4 +1,4 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
+﻿<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
 <%@ taglib uri="jakarta.tags.core" prefix="c" %>
 <%@ taglib uri="jakarta.tags.fmt" prefix="fmt" %>
 <!DOCTYPE html>
@@ -6,15 +6,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title><c:choose><c:when test="${sessionScope.role eq 'admin'}">Exam Performance Reports</c:when><c:otherwise>My Exam Results</c:otherwise></c:choose> - Online Examination System</title>
+    <title><c:choose><c:when test="${sessionScope.role eq 'admin'}">Exam Performance Reports</c:when><c:otherwise>My Exam Results</c:otherwise></c:choose> - TestVerse</title>
     <link rel="stylesheet" href="${pageContext.request.contextPath}/css/style.css">
 </head>
 <body>
     <header class="app-header">
         <div class="header-container">
             <a href="${pageContext.request.contextPath}/${sessionScope.role eq 'admin' ? 'adminDashboard.jsp' : 'studentDashboard.jsp'}" class="brand-link">
-                <div class="brand-icon">OE</div>
-                <span class="brand-title">ExamPortal</span>
+                <div class="brand-icon">TV</div>
+                <span class="brand-title">TestVerse</span>
             </a>
             <div class="user-nav">
                 <div class="user-profile">
@@ -73,7 +73,7 @@
             <c:choose>
                 <c:when test="${empty results}">
                     <div class="empty-state">
-                        <div style="font-size: 2.5rem; margin-bottom: 0.75rem;">📊</div>
+                        <div style="font-size: 2.5rem; margin-bottom: 0.75rem;">ðŸ“Š</div>
                         <h3 style="color: var(--text-main); margin-bottom: 0.5rem;">No Examination Records Found</h3>
                         <p>No student submissions have been recorded for the selected criteria.</p>
                     </div>
@@ -124,7 +124,7 @@
     </main>
 
     <footer class="app-footer">
-        <p>&copy; Advance Java Lab (5CAI4-24) — Online Examination System</p>
+        <p>&copy; Advance Java Lab (5CAI4-24) â€” TestVerse</p>
     </footer>
 </body>
 </html>

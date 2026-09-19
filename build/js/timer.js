@@ -1,5 +1,5 @@
-/**
- * Online Examination System - Exam Countdown Timer & Client UX Handler
+﻿/**
+ * TestVerse - Exam Countdown Timer & Client UX Handler
  * Advance Java Lab (5CAI4-24), B.Tech CSE-AI, 3rd Year
  */
 

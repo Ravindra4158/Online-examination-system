@@ -1,5 +1,5 @@
-# ==========================================================
-# Online Examination System - Automated Setup Script
+﻿# ==========================================================
+# TestVerse - Automated Setup Script
 # ==========================================================
 # Prerequisites: Windows 10+, JDK 17+, MySQL Server 8.0
 # This script will:
@@ -56,7 +56,7 @@ function Add-ToPathPersistent {
 
 Write-Host ""
 Write-Host "============================================" -ForegroundColor Cyan
-Write-Host "  Online Examination System - Setup Script  " -ForegroundColor Cyan
+Write-Host "  TestVerse - Setup Script  " -ForegroundColor Cyan
 Write-Host "============================================" -ForegroundColor Cyan
 Write-Host ""
 
@@ -331,7 +331,7 @@ if (Test-Path $jsDir) {
 }
 
 # Create WAR file
-$warName = "online_exam.war"
+$warName = "testverse.war"
 $warPath = Join-Path $ProjectRoot $warName
 Write-Host "  Creating $warName..."
 Push-Location $buildDir
@@ -374,7 +374,7 @@ if (-not $env:JAVA_HOME) {
 Start-Process -FilePath "cmd.exe" -ArgumentList "/c `"$startupBat`"" -WindowStyle Normal
 Start-Sleep -Seconds 5
 
-$appUrl = "http://localhost:8080/online_exam/"
+$appUrl = "http://localhost:8080/testverse/"
 Write-Host ""
 Write-Host "============================================" -ForegroundColor Cyan
 Write-Host "  SETUP COMPLETE!" -ForegroundColor Green

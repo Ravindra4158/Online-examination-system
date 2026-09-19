@@ -1,19 +1,19 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
+﻿<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
 <%@ taglib uri="jakarta.tags.core" prefix="c" %>
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Create Test - Online Examination System</title>
+    <title>Create Test - TestVerse</title>
     <link rel="stylesheet" href="${pageContext.request.contextPath}/css/style.css">
 </head>
 <body>
     <header class="app-header">
         <div class="header-container">
             <a href="${pageContext.request.contextPath}/adminDashboard.jsp" class="brand-link">
-                <div class="brand-icon">OE</div>
-                <span class="brand-title">ExamPortal</span>
+                <div class="brand-icon">TV</div>
+                <span class="brand-title">TestVerse</span>
             </a>
             <div class="user-nav">
                 <div class="user-profile">
@@ -123,7 +123,7 @@
     </main>
 
     <footer class="app-footer">
-        <p>&copy; Advance Java Lab (5CAI4-24) — Online Examination System</p>
+        <p>&copy; Advance Java Lab (5CAI4-24) â€” TestVerse</p>
     </footer>
 
     <script>

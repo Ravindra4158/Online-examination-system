@@ -1,4 +1,4 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
+﻿<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
 <%@ taglib uri="jakarta.tags.core" prefix="c" %>
 <!DOCTYPE html>
 <html lang="en">
@@ -24,7 +24,7 @@
 
     <!-- Timeout Auto-Submit Banner (hidden initially) -->
     <div id="timeoutBanner" class="alert alert-warning" style="display: none; margin: 1rem auto; max-width: 900px; text-align: center; font-weight: 700;">
-        ⚠️ Time's up! Automatically submitting your answers...
+        âš ï¸ Time's up! Automatically submitting your answers...
     </div>
 
     <main class="main-content" style="padding-top: 1.5rem;">
@@ -84,7 +84,7 @@
     </main>
 
     <footer class="app-footer">
-        <p>&copy; Advance Java Lab (5CAI4-24) — Online Examination System</p>
+        <p>&copy; Advance Java Lab (5CAI4-24) â€” TestVerse</p>
     </footer>
 
     <!-- Timer & Exam UX script -->
